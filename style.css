@@ -59,3 +59,6 @@ body {
 .container .buttonExtra_active {
   display: block;
 }/*# sourceMappingURL=style.css.map */
+.container .button_random_disable{
+  display: none;
+}

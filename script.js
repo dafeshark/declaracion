@@ -1,5 +1,5 @@
-const buttons = document.querySelectorAll(".buttons")
 const buttonNo = document.querySelector("#buttonNo");
+const buttonYes = document.querySelector("#buttonYes")
 const buttonExtra = document.querySelector("#buttonExtra");
 
 const answer = document.querySelector("#answer");
@@ -8,10 +8,7 @@ let maxWidth = 81;
 let maxHeight = 60;
 
 
-buttons.forEach((button)=>{
-    button.addEventListener("click",()=>{
-        //No button
-        if(button.id === "buttonNo"){
+buttonNo.addEventListener("mouseenter",()=>{
             buttonNo.classList.add("button_random_position");
             buttonExtra.classList.add("buttonExtra_active");
             let width = (Math.random()*maxWidth);
@@ -20,9 +17,8 @@ buttons.forEach((button)=>{
             let height = (Math.random()*maxHeight -1);
             let randomHeight = height + "%";
             buttonNo.style.top = randomHeight;
-        }   //Yes button
-        else{
-            answer.textContent = "sabia que dirias que si";
-        }
     })
-})
+    buttonYes.addEventListener("click",()=>{
+        answer.textContent = "sabia que dirias que si";
+        buttonNo.classList.add("button_random_disable");
+    })
